@@ -1,0 +1,1306 @@
+﻿@model report1.Irform
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<h3>Create</h3>
+
+<h3>Incident Report Form</h3>
+<hr />
+<div class="row">
+    <div class="container col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+
+
+
+            <div class="custom-control custom-checkbox float-right">
+                <div>
+                    <input type="checkbox" asp-for="CBxNearMiss" class="custom-control-input">
+                    <label class="custom-control-label" asp-for="CBxNearMiss">Near-Miss</label>
+                </div>
+                <div>
+                    <input type="checkbox" asp-for="CBxInjuryReported" class="custom-control-input">
+                    <label class="custom-control-label" for="CBxInjuryReported">Injury Reported</label>
+                </div>
+                <div>
+                    <input type="checkbox" asp-for="CBxPropertyDamage" class="custom-control-input">
+                    <label class="custom-control-label" for="CBxPropertyDamage">Property Damage Only</label>
+                </div>
+
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="accordion" id="sectionsAccordion">
+
+                <!-- SECTION 1 Repeorting Details-->
+                <div class="card">
+
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                SECTION 1 - Reporting Details
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show mb-2 ml-2 col-md-12" aria-labelledby="headingOne" data-parent="#sectionsAccordion">
+                        <br />
+                        <div class="col-md-12 row">
+                            <div class="col-md-4 mt">
+                                <div class="form-group">
+                                    <label asp-for="LastName" class="control-label"></label>
+                                    <input asp-for="LastName" class="form-control" />
+                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DatOfIncident" class="control-label"></label>
+                                    <input asp-for="DatOfIncident" class="form-control" />
+                                    <span asp-validation-for="DatOfIncident" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label asp-for="ExactLocation" class="control-label"></label>
+                                    <input asp-for="ExactLocation" class="form-control" />
+                                    <span asp-validation-for="ExactLocation" class="text-danger"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="FirstName" class="control-label"></label>
+                                    <input asp-for="FirstName" class="form-control" />
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </div>
+
+                                @*<div class="form-group">
+                                    <label asp-for="TimeOfIncident" class="control-label"></label>
+                                    <input asp-for="TimeOfIncident" class="form-control" />
+                                    <span asp-validation-for="TimeOfIncident" class="text-danger"></span>
+                                </div>*@
+                                <div class="form-group">
+                                    <label asp-for="LastHourWorked" class="control-label"></label>
+                                    <input asp-for="LastHourWorked" class="form-control" />
+                                    <span asp-validation-for="LastHourWorked" class="text-danger"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="Position" class="control-label"></label>
+                                    <input asp-for="Position" class="form-control" />
+                                    <span asp-validation-for="Position" class="text-danger"></span>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label asp-for="Department" class="control-label"></label>
+                                    <input asp-for="Department" class="form-control" />
+                                    <span asp-validation-for="Department" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row form-group col-md-12 mt-1">
+
+                            <label asp-for="PotentialWitnesses" class="control-label"></label>
+                            <input asp-for="PotentialWitnesses" class="form-control" />
+                            <span asp-validation-for="PotentialWitnesses" class="text-danger"></span>
+
+                        </div>
+
+
+                        <div class="row col-md-12">
+                            <div class="form-row form-group col-md-6">
+
+                                <label asp-for="IncidentReportedTo" class="control-label"></label>
+                                <input asp-for="IncidentReportedTo" class="form-control" />
+                                <span asp-validation-for="IncidentReportedTo" class="text-danger"></span>
+
+
+                            </div>
+                            <div class="form-row form-group col-md-6">
+
+                                <label asp-for="DateReported" class="control-label"></label>
+                                <input asp-for="DateReported" class="form-control" />
+                                <span asp-validation-for="DateReported" class="text-danger"></span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--  SECTION 1 END
+
+    <!--  SECTION 2 START  -->
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            SECTON 2 - Injury Details
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#sectionsAccordion">
+                    <br />
+
+                    <div class="row ml-1 mb-2 col-md-12">
+
+                        <div class="col-md-5 mt-2 ml-2">
+                            <div class="form-group">
+                                <label asp-for="LengthOfTimeInPosition">Length of time in position:</label>
+                                <input type="text" class="form-control col-md-6" asp-for="LengthOfTimeInPosition">
+                            </div>
+
+
+                            <br />
+                            @* Sec 2 Was the Incident:  *@
+                            <div class="custom-control custom-checkbox">
+                                <label class="font-weight-bold">Was the incident:</label>
+                                <div>
+                                    <input class="custom-control-input" type="checkbox" asp-for="RBtnSuddenSpecific">
+                                    <label asp-for="RBtnSuddenSpecific" class="custom-control-label">Sudden Specific Event/Occurance</label>
+                                </div>
+                                <div>
+                                    <input class="custom-control-input" type="checkbox" asp-for="RBtnGradually">
+                                    <label asp-for="RBtnGradually" class="custom-control-label">Gradually Occuring Over Time</label>
+                                </div>
+                                <div>
+                                    <input class="custom-control-input" type="checkbox" asp-for="RBtnOccupational">
+                                    <label asp-for="RBtnOccupational" class="custom-control-label">Occupational Disease</label>
+                                </div>
+                                <div>
+                                    <input class="custom-control-input" type="checkbox" asp-for="RBtnFatality">
+                                    <label asp-for="RBtnFatality" class="custom-control-label">Fatality</label>
+                                </div>
+                            </div>
+                            <br />
+                            @* Dominant hand *@
+
+                            <div class="custom-control custom-checkbox">
+                                <label class="font-weight-bold">Dominant hand? </label>
+                                <div>
+
+                                    <input type="checkbox" class="ml-3 custom-control-input" asp-for="LeftHand" />
+                                    <label asp-for="LeftHand" class="radio-inline custom-control-label">Left</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="ml-3 custom-control-input" asp-for="RightHand" />
+                                    <label asp-for="RightHand" class=" custom-control-label">Right</label>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-5 mt-2  ">
+
+                            <div class="custom-control custom-checkbox  ">
+                                <div class="row">
+                                    <label class="font-weight-bolder ml-0 col-md-8">Fully trained in this position?</label>
+                                    <div class="col-md-3">
+                                        <div class="">
+                                            <input type="checkbox" class="ml-2 custom-control-input" asp-for="FullyTrainedYes" />
+                                            <label asp-for="FullyTrainedYes" class="ml-1 custom-control-label">Yes</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" class="ml-2 custom-control-input" asp-for="FullyTrainedNo" />
+                                            <label asp-for="FullyTrainedNo" class="ml-1 custom-control-label">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="custom-control custom-checkbox mt-2">
+
+                                <div class="row">
+                                    <label class="font-weight-bolder col-md-8">Wearing PPE?</label>
+
+                                    <div class="col-md-3">
+                                        <div>
+                                            <input class="ml-2 custom-control-input " type="checkbox" asp-for="WearingPpeyes" />
+                                            <label asp-for="WearingPpeyes" class="custom-control-label ml-2">Yes</label>
+                                        </div>
+                                        <div>
+                                            <input class="ml-2 custom-control-input" type="checkbox" asp-for="WearingPpeno" />
+                                            <label asp-for="WearingPpeno" class="custom-control-label ml-2"> No </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="custom-control form-group mt-2">
+                                <label asp-for="SpecifyPpe" class="font-weight-bolder col-md-5">Specify PPE?:</label>
+                                <input type="text" class="col-md-12 form-control ml-2" asp-for="SpecifyPpe">
+                            </div>
+                            <br />
+
+                            @* Type Of Incident *@
+                            <label class="font-weight-bold ml-0">Type of Incident/Illness:</label><label>(Select all that aply)</label>
+                            <div class="custom-control custom-checkbox">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <div>
+                                            <input type="checkbox" class="custom-control-input" asp-for="CBxCut">
+                                            <label class="custom-control-label" asp-for="CBxCut">Cut</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" class="custom-control-input" asp-for="CBxBurn">
+                                            <label class="custom-control-label" asp-for="CBxBurn">Burn</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" class="custom-control-input" asp-for="CBxBumpBruise">
+                                            <label class="custom-control-label" asp-for="CBxBumpBruise">Bump / Bruise</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" class="custom-control-input" asp-for="CBxSlipFall">
+                                            <label class="custom-control-label" asp-for="CBxSlipFall">Slip / Fall</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" class="custom-control-input" asp-for="CBxRepettitiveStrain">
+                                            <label class="custom-control-label" asp-for="CBxRepettitiveStrain">Repettitive Strain</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div>
+                                            <input type="checkbox" class="custom-control-input" asp-for="CBxBackInjury">
+                                            <label class="custom-control-label" asp-for="CBxBackInjury">Back Injury</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" class="custom-control-input" asp-for="CBxOverexertion">
+                                            <label class="custom-control-label" asp-for="CBxOverexertion">Overexertion</label>
+                                        </div>
+                                        <div class="form-group form-inline">
+
+                                            <div class="form-group form-inline">
+                                                <input type="checkbox" class="custom-control-input" asp-for="CBxOther">
+                                                <label class="custom-control-label" asp-for="CBxOther">Other</label>
+                                                <input type="text" class="form-control ml-2 " asp-for="TypeOfAccidentOther" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <br />
+
+                    @* Area of Injury *@
+
+                    <label class=" col-md-12 text-center font-weight-bolder">Area of Injury (Body Part-Please check all that apply)</label>
+
+                    <div class="form-group row">
+                        <div class="col-md-3 ml-3 row">
+                            <br />
+
+                            <div class="col-5">
+                                <div class="custom-control custom-checkbox">
+                                    <br />
+                                    <div>
+                                        <input type="checkbox" class="custom-control-input" asp-for="CBxHead">
+                                        <label class="custom-control-label" asp-for="CBxHead">Head</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" class="custom-control-input" asp-for="CBxFace">
+                                        <label class="custom-control-label" asp-for="CBxFace">Face</label>
+                                    </div>
+
+                                    <div>
+                                        <input type="checkbox" class="custom-control-input" asp-for="CBxEye">
+                                        <label class="custom-control-label" asp-for="CBxEye">Eye</label>
+
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" class="custom-control-input" asp-for="CBxTheeth">
+                                        <label class="custom-control-label" asp-for="CBxTheeth">Theeth</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" class="custom-control-input" asp-for="CBxNeck">
+                                        <label class="custom-control-label" asp-for="CBxNeck">Neck</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="custom-control custom-checkbox">
+                                    <br />
+
+                                    <div>
+                                        <input type="checkbox" class="custom-control-input" asp-for="CBxPelvis">
+                                        <label class="custom-control-label" asp-for="CBxPelvis">Pelvis</label>
+
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" class="custom-control-input" asp-for="CBxUpperBack">
+                                        <label class="custom-control-label" asp-for="CBxUpperBack">UpperBack</label>
+
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" class="custom-control-input" asp-for="CBxLowerBack">
+                                        <label class="custom-control-label" asp-for="CBxLowerBack">LowerBack</label>
+
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" class="custom-control-input" asp-for="CBxChest">
+                                        <label class="custom-control-label" asp-for="CBxChest">Chest</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 ">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="custom-checkbox">
+                                                <label class="font-weight-bolder">Left</label>
+                                                <div class="ml-4">
+                                                    <div>
+                                                        <div>
+                                                            <input type="checkbox" class="custom-control-input" asp-for="CBxLeftShoulder">
+                                                            <label class="custom-control-label text-right" asp-for="CBxLeftShoulder">Shoulder</label>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxLeftElbow">
+                                                        <label class="custom-control-label" asp-for="CBxLeftElbow">Elbow</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxLeftUpperArm">
+                                                        <label class="custom-control-label" asp-for="CBxLeftUpperArm">Upper Arm</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxLeftForeArm">
+                                                        <label class="custom-control-label" asp-for="CBxLeftForeArm">Forearm</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxLeftHand">
+                                                        <label class="custom-control-label" asp-for="CBxLeftHand">Hand</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxLeftWrist">
+                                                        <label class="custom-control-label" asp-for="CBxLeftWrist">Wrist</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxLeftFinder">
+                                                        <label class="custom-control-label" asp-for="CBxLeftFinder">Finger</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxLeftHip">
+                                                        <label class="custom-control-label" asp-for="CBxLeftHip">Hip</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="custom-checkbox custom-control">
+                                                <label class="font-weight-bolder">Right</label>
+                                                <div class="ml-4">
+
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxRightShoulder">
+                                                        <label class="custom-control-label" asp-for="CBxRightShoulder">Shoulder</label>
+                                                    </div>
+
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxRightElbow">
+                                                        <label class="custom-control-label" asp-for="CBxRightElbow">Elbow</label>
+                                                    </div>
+
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxRightUpperArm">
+                                                        <label class="custom-control-label" asp-for="CBxRightUpperArm">Upper Arm</label>
+                                                    </div>
+
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxRightForeArm">
+                                                        <label class="custom-control-label" asp-for="CBxRightForeArm">Forearm</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxRightHand">
+                                                        <label class="custom-control-label" asp-for="CBxRightHand">Hand</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxRightWrist">
+                                                        <label class="custom-control-label" asp-for="CBxRightWrist">Wrist</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxRightFinder">
+                                                        <label class="custom-control-label" asp-for="CBxRightFinder">Finger</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxRightHip">
+                                                        <label class="custom-control-label" asp-for="CBxRightHip">Hip</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="ml-3 custom-checkbox">
+                                                <label class="font-weight-bolder">Left</label>
+                                                <div class="ml-4">
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxLeftButtocks">
+                                                        <label class="custom-control-label" asp-for="CBxLeftButtocks">Buttocks</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxLeftGroin">
+                                                        <label class="custom-control-label" asp-for="CBxLeftGroin">Groin</label>
+                                                    </div>
+
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxLeftThigh">
+                                                        <label class="custom-control-label" asp-for="CBxLeftThigh">Thigh</label>
+                                                    </div>
+
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxLeftKnee">
+                                                        <label class="custom-control-label" asp-for="CBxLeftKnee">Knee</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxLeftLowerLeg">
+                                                        <label class="custom-control-label" asp-for="CBxLeftLowerLeg">Lower Leg</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxLeftAnkle">
+                                                        <label class="custom-control-label" asp-for="CBxLeftAnkle">Ankle</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxLeftFoot">
+                                                        <label class="custom-control-label" asp-for="CBxLeftFoot">Foot</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxLeftToes">
+                                                        <label class="custom-control-label" asp-for="CBxLeftToes">Toes(s)</label>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="custom-checkbox custom-control">
+                                                <label class="font-weight-bolder">Right</label>
+
+                                                <div class="ml-4">
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxRightButtock">
+                                                        <label asp-for="CBxRightButtock" class="custom-control-label">Buttocks</label>
+                                                    </div>
+
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxRightGroin">
+                                                        <label asp-for="CBxRightGroin" class="custom-control-label">Groin</label>
+                                                    </div>
+
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxRightThigh">
+                                                        <label asp-for="CBxRightThigh" class="custom-control-label">Thigh</label>
+                                                    </div>
+
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxRightKnee">
+                                                        <label asp-for="CBxRightKnee" class="custom-control-label">Knee</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxRightLowerLeg">
+                                                        <label class="custom-control-label" asp-for="CBxRightLowerLeg">Lower Leg</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxRightAnkle">
+                                                        <label class="custom-control-label" asp-for="CBxRightAnkle">Ankle</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxRightFoot">
+                                                        <label class="custom-control-label" asp-for="CBxRightFoot">Foot</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" class="custom-control-input" asp-for="CBxRightToes">
+                                                        <label class="custom-control-label" asp-for="CBxRightToes"></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <br />
+                    <hr />
+
+                    <div class="row col-md-12 ml-2">
+
+                        <div class="col-md-4">
+                            <div class="form-inline">
+                                <input type="checkbox" asp-for="NoMedAttentionRequired" />
+                                <label class="form-check-inline font-weight-bolder ml-2">No medical attention required</label>
+                            </div>
+
+                        </div>
+                        <div class="col-3">
+                            <div class="form-inline">
+                                <input type="checkbox" asp-for="FirstAidOnsite" />
+                                <label class="form-check-inline font-weight-bolder ml-2">First aid given onsite</label>
+                            </div>
+
+                        </div>
+                        <div class="col-4">
+                            <div class="form-inline">
+                                <input type="checkbox" asp-for="OutsideMedAttention" />
+                                <label class="form-check-inline font-weight-bolder ml-2">Outside medical attention sought</label>
+                            </div>
+
+                            <div class="form-row form-group form-inline ml-2">
+                                <label class="font-weight-bolder" asp-for="DateOfmedAttention">When:</label>
+                                <input type="date" class="form-control ml-2" asp-for="DateOfmedAttention">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="ml-2">
+                        <div class="form-inline ml-2">
+                            <label class="font-weight-bolder">Was worker sent out for medical attention(i.e. Urgent care)?</label>
+
+                            <input class="ml-3" type="checkbox" asp-for="SentOutforMedicalAttn" />
+                            <label class="ml-2">Yes</label>
+
+                            <input class="ml-3" type="checkbox" asp-for="NotSentOutforMedicalAttn" />
+                            <label class="ml-2">No</label>
+
+                        </div>
+                        <br />
+
+                        <div class="form-row form-group form-inline ml-2">
+                            <label class="font-weight-bolder" asp-for="DateLearnedOutsideHc">When did you learn that the worker recieved outside Health Care?</label>
+                            <input type="date" class="form-control ml-2" asp-for="DateLearnedOutsideHc">
+                        </div>
+
+                        <div class="form-row form-group form-inline ml-2">
+                            <label class="font-weight-bolder">Name of Health Care Provider (If known):</label>
+                            <input class="form-group form-control" type="text" asp-for="HealthCareProvider" />
+                        </div>
+                        <div class="form-inline ml-2 form-group mb-0 pb-0">
+                            <label class="font-weight-bolder">Did worker have any lost time(not paid) after the day of injury?</label>
+
+                            <input class="ml-3" type="checkbox" asp-for="HaveLostTime" />
+                            <label class="ml-2">Yes</label>
+
+                            <input class="ml-3" type="checkbox" asp-for="NotHaveLostTime" />
+                            <label class="ml-2">No</label>
+
+
+                        </div>
+                        <div class="form-inline mt-0 ml-2 mb-2">
+                            <label>If yes, When?</label>
+                            <input type="date" class="form-control" asp-for="DateLostTime" />
+                        </div>
+                        <div class="">
+                            <label class="font-weight-bolder ml-2">Worker provided with FAF?</label>
+
+                            <input type="checkbox" asp-for="ProvidedFaf" />
+                            <label>Yes</label>
+                            <input type="checkbox" asp-for="NotProvidedFaf" />
+                            <label>No</label>
+                            <label class="font-weight-bolder ml-4">Provided FAF returned?</label>
+                            <input type="checkbox" asp-for="FafReturned" />
+                            <label>Yes</label>
+                            <input type="checkbox" asp-for="NotfafReturned" />
+                            <label>No</label>
+                        </div>
+                        <div class="ml-2">
+
+                            <label class="font-weight-bolder">Modified Duties:</label>
+                            <input class="ml-2" type="checkbox" value="true" asp-for="ModDutyNoRestriction" />
+                            <label>No Restrictions</label>
+
+                            <input class="ml-2" type="checkbox" value="true" asp-for="ModDutyAccepted" />
+                            <label>Accepted</label>
+
+                            <input class="ml-2" type="checkbox" value="true" asp-for="ModDutyDeclined" />
+                            <label>Declined</label>
+                            <label>Why?</label>
+
+                            <input class="col-5" type="text" asp-for="WhyModiedDutyDeclined" />
+
+                        </div>
+                        <div class="form-row form-group form-inline ml-2">
+                            <label class="font-weight-bolder" asp-for="DateModDutyOffered">Date modified duties offered</label>
+                            <input type="date" class="form-control ml-2" asp-for="DateModDutyOffered">
+                        </div>
+
+                        <div class="ml-2">
+                            <label class="font-weight-bolder"> What duties were offered?</label>
+
+                            <input class="col-8" type="text" asp-for="ModiedDutiesOffered" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SECTION 3-->
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            SECTION 3 – Incident Details/JHSC Recommendation
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#sectionsAccordion">
+                    <div class="card-body">
+                        <p class="font-weight-bolder">
+                            Describe the incident that occurred and include any details of equipment,
+                            materials or environmental conditions that may have contributed. Include what the injury is and describe
+                            what the worker was doing at the time (ex. Trimming part A2232, slipped on wet floor at D5, etc.)
+                            Be specific.
+                        </p>
+
+
+                        <div class="form-group col-12">
+                            @*<label asp-for="TxAdescribeIncident" class="control-label"></label>*@
+                            <textarea asp-for="TxAdescribeIncident" rows="3" class="form-control"></textarea>
+                        </div>
+
+
+
+                        <div class="col-md-12">
+                            <p class="font-weight-bolder">How can the incident be prevented from happening again? List suggestions from employee involved.</p>
+                            <textarea asp-for="TxAhowToPrevent" rows="4" class="form-control mb-2"></textarea>
+
+                            @* MANAGER access only *@
+                            <p class="font-weight-bolder">Any recommendations from JHSC worker member?</p>
+                            <textarea asp-for="TxJhscrecomend" rows="3" class="form-control mb-2"></textarea>
+                        </div>
+
+                        <div class="form-inline mt-2">
+                            <label class="font-weight-bolder" asp-for="JhscrepName">JHSC(Worker Rep) Name:</label>
+                            <input type="text" class="form-control ml-2" asp-for="JhscrepName">
+                            <label class="ml-2">Signature</label>
+                            <input type="text" class="form-control ml-2" asp-for="Jhscsignature">
+                            <label class="ml-2">Date</label>
+                            <input type="date" class="form-control ml-2" asp-for="JhscsignDate">
+                        </div>
+                        <hr />
+                        <div class="text-center font-weight-bolder form-group">
+                            COMPLETE ALL REMAINING SECTIONS FOR ANY OUTSIDE MEDICAL AID AND PROPERTY DAMAGE
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- SECTION 3 END-->
+            <!-- SECTION 4 start-->
+
+            <div class="card">
+
+                <div class="card-header" id="headingFour">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            SECTION 4 – Witnesses
+                        </button>
+                    </h2>
+                </div>
+
+
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#sectionsAccordion">
+                    <div class="card-body">
+
+                        Individuals who were in the area or have knowledge of the incident should be interviewed. All witness statements should be taken.
+                        Write in below or add extra pages as required. Attach all witness forms to this report.
+                        More witnesses may be identified during the investigation than what is first reported in Section 1.
+
+
+                        <div class="row ml-2 form-inline">
+
+                            <div class="col-3">
+                                <div class="form-inline">
+                                    <input type="checkbox" asp-for="NoWitnesses" />
+                                    <label class="form-check-inline ml-2">No Witnesses</label>
+                                </div>
+
+                            </div>
+                            <div class="col-4">
+                                <div class="form-inline">
+                                    <input type="checkbox" asp-for="AllWitnsSttmntsAttched" />
+                                    <label class="form-check-inline ml-2">All Witness Statement Forms attached</label>
+                                </div>
+
+                            </div>
+                            <div class="col-4">
+                                <div class="form-inline">
+                                    <input type="checkbox" asp-for="WitnsSttmntsToFllw" />
+                                    <label class="form-check-inline  ml-2">Witness Statement Form(s) to follow</label>
+                                </div>
+                            </div>
+                            <textarea class="col-12" rows="3" asp-for="WitnessSatetements"></textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card">
+
+                <div class="card-header" id="headingFive">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            SECTION 5 – Underlying Causes
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#sectionsAccordion">
+                    <div class="card-body">
+                        <div class="font-weight-bolder">
+                            Check (X) all that are applicable
+                        </div>
+
+
+                        <div class="col-md-12 row">
+
+                            <!--Conditions-->
+                            <div class="col-md-6 custom-checkbox">
+                                <div class="text-center font-weight-bolder">Conditions</div>
+
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxCongestion">
+                                    <label class="custom-control-label" asp-for="CBxCongestion">Congestion</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxDefEquipmnt">
+                                    <label class="custom-control-label" asp-for="CBxDefEquipmnt">Defective Equipment, tools or materials</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxPoorHsKeeping">
+                                    <label class="custom-control-label" asp-for="CBxPoorHsKeeping">Poor housekeeping</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxSlpTripHzrd">
+                                    <label class="custom-control-label" asp-for="CBxSlpTripHzrd">Slip/trip hazards</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxInadqtSftySys">
+                                    <label class="custom-control-label" asp-for="CBxInadqtSftySys">Inadequate safety systems</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxDsgEqpWrksttn">
+                                    <label class="custom-control-label" asp-for="CBxDsgEqpWrksttn">Design of equipment/workstation</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxInEdqtPrtEqui">
+                                    <label class="custom-control-label" asp-for="CBxInEdqtPrtEqui">Inadequate protective equipment</label>
+                                </div>
+
+
+                            </div>
+
+                            <!-- Practices-->
+                            <div class="col-md-6 custom-checkbox ">
+                                <div class="text-center font-weight-bolder">Practices</div>
+
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxImpropPosLift">
+                                    <label class="custom-control-label" asp-for="CBxImpropPosLift">Improper body position/posture/lifting</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxRushing">
+                                    <label class="custom-control-label" asp-for="CBxRushing">Rushing</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxInappCndct">
+                                    <label class="custom-control-label" asp-for="CBxInappCndct">Inappropriate conduct</label>
+                                </div>
+                                <div class="ml-5">
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxNtFllwProcdr">
+                                    <label class="custom-control-label" asp-for="CBxNtFllwProcdr">Not following appropriate procedures</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxInprprUseOfEqui">
+                                    <label class="custom-control-label" asp-for="CBxInprprUseOfEqui">Improper use of equipment</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxAltModEqui">
+                                    <label class="custom-control-label" asp-for="CBxAltModEqui">Altering or modifying equipment</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxNtUsePpe">
+                                    <label class="custom-control-label" asp-for="CBxNtUsePpe">Not using personal protective equipment</label>
+                                </div>
+                                <div class="ml-5">
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxRmvlSaftyDev">
+                                    <label class="custom-control-label" asp-for="CBxRmvlSaftyDev">Removal of safety device</label>
+                                </div>
+                                <div class="ml-5">
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxLacOfkAttn">
+                                    <label class="custom-control-label" asp-for="CBxLacOfkAttn">Lack of attention</label>
+                                </div>
+                                <div class="ml-5">
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxPracticeOthrExp">
+                                    <label class="custom-control-label" asp-for="CBxPracticeOthrExp">Other(explain)</label>
+
+                                </div>
+                                <textarea class="col-10 ml-0" asp-for="TxApracticeOthrExp" rows="2"></textarea>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- SECTION 5 END-->
+            <!-- SECTION 6 Prevention/Corrective Action-->
+            <div class="card">
+
+                <div class="card-header" id="headingFour">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            SECTION 6 – Prevention/Corrective Action
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#sectionsAccordion">
+                    <div class="card-body">
+                        <div class="font-weight-bolder">
+                            Mark with (X) those actions taken/decided upon or planned to prevent recurrence.
+                            More than one item may apply.
+                        </div>
+
+
+                        <div class="col-md-12 row mt-1">
+
+
+                            <div class="col-md-6 custom-checkbox">
+
+
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxTrnInstInvolved">
+                                    <label class="custom-control-label" asp-for="CBxTrnInstInvolved">Training/ instruction of person involved</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxTrnInstOther">
+                                    <label class="custom-control-label" asp-for="CBxTrnInstOther">Training/ instruction of other workers</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxImpWrkProcedure">
+                                    <label class="custom-control-label" asp-for="CBxImpWrkProcedure">Improve work procedures</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxPrcsChgImprv">
+                                    <label class="custom-control-label" asp-for="CBxPrcsChgImprv">Process change/improvement</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxImpEngDsgWsttn">
+                                    <label class="custom-control-label" asp-for="CBxImpEngDsgWsttn">Improve engineering/design of workstation</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxImprvPpe">
+                                    <label class="custom-control-label" asp-for="CBxImprvPpe">Improve PPE</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxImplmntPrvMntnc">
+                                    <label class="custom-control-label" asp-for="CBxImplmntPrvMntnc">Implement preventative maintenance</label>
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-6 custom-checkbox ">
+
+
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxImpInspPrcdr">
+                                    <label class="custom-control-label" asp-for="CBxImpInspPrcdr">Improve inspection procedures</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxToolsEquiRprRplc">
+                                    <label class="custom-control-label" asp-for="CBxToolsEquiRprRplc">Tools, equipment repair or replacement</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxRqErgAssmnt">
+                                    <label class="custom-control-label" asp-for="CBxRqErgAssmnt">Request ergonomic assessment</label>
+                                </div>
+                                <div class="ml-5">
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxReAsgnPrsn">
+                                    <label class="custom-control-label" asp-for="CBxReAsgnPrsn">Reassignment of person</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxImpHsKeeping">
+                                    <label class="custom-control-label" asp-for="CBxImpHsKeeping">Improve housekeeping</label>
+                                </div>
+                                <div class="ml-5">
+                                    <input type="checkbox" class="custom-control-input" asp-for="CBxInstSftyDev">
+                                    <label class="custom-control-label" asp-for="CBxInstSftyDev">Installation of safety devices</label>
+                                </div>
+
+                            </div>
+                            <div class="font-weight-bolder mt-2">
+                                Please describe in detail what preventative/corrective steps have been taken and when.
+                                For items that have not been completed please specify time frames, work orders, etc.
+                            </div>
+                            <textarea class="col-md-12 mt-1" asp-for="TxtAsec6Desc" rows="5"></textarea>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- SECTION 6 END-->
+            <!-- SECTION 7-->
+
+            <div class="card">
+
+                <div class="card-header" id="headingSeven">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            SECTION 7 – Concerns with this claim
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#sectionsAccordion">
+                    <div class="card-body">
+                        <div>
+                            If the investigation reveals events other than what was reported above, complete a narrative with your findings and attach it to this report.
+                            Any other evidence/information not otherwise reported should also be documented and attached.
+                        </div>
+                        <br />
+
+                        <div class="row custom-checkbox ml-2">
+                            <div class="form-inline col-3">
+                                <input type="checkbox" class="custom-control-input" asp-for="NoFurtherReport" />
+                                <label asp-for="NoFurtherReport" class="custom-control-label  ml-2">No Further Report</label>
+                            </div>
+                            <div class="form-inline col-3">
+                                <input type="checkbox" class="custom-control-input" asp-for="ReportAttached" />
+                                <label asp-for="ReportAttached" class="custom-control-label  ml-2">Report Attached</label>
+                            </div>
+                            <div class=" col-3">
+                                <input type="checkbox" class="custom-control-input" asp-for="ReportToFollow" />
+                                <label asp-for="ReportToFollow" class="custom-control-label ml-2">Report to follow</label>
+                            </div>
+                        </div>
+                        <br />
+
+                        <textarea class="col-11" asp-for="SecSevenReport" rows="3"></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SECTION 7 END-->
+            <!-- SECTION 8 START-->
+
+            <div class="card">
+                <div class="card-header" id="headingSeven">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button"
+                                data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            SECTION 8 – Determinations of Root Causes
+                        </button>
+                    </h2>
+
+
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#sectionsAccordion">
+                    <div class="card-body">
+
+                        <div>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>State Injury</td>
+                                    <td><textarea class="col-10" asp-for="StateInjury"></textarea></td>
+                                    <td>3. WHY?</td>
+                                    <td><textarea class="col-10" asp-for="ThirdWhy"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>1. WHY?</td>
+                                    <td><textarea class="col-10" asp-for="FirstWhy"></textarea></td>
+                                    <td>4. WHY?</td>
+                                    <td><textarea class="col-10" asp-for="FourthWhy"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>2. WHY?</td>
+                                    <td><textarea class="col-10" asp-for="SecondWhy"></textarea></td>
+                                    <td>5. WHY?</td>
+                                    <td><textarea class="col-10" asp-for="FifthWhy"></textarea></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br />
+
+                        <div class="">
+                            <table class="table table-bordered">
+
+                                <thead>
+                                    <tr>
+                                        <th class="col-6">
+                                            Recomended Action
+                                        </th>
+                                        <th>
+                                            Responsibility
+                                        </th>
+                                        <th>
+                                            Target Date
+                                        </th>
+                                        <th>
+                                            Completetion Date
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td class="">
+                                            <textarea class="col-12" type="text" rows="1" asp-for="RecomdActionOne"></textarea>
+                                        </td>
+                                        <td>
+                                            <input type="text" asp-for="ActionOneResponsibility" />
+                                        </td>
+                                        <td>
+                                            <input class="form-control" type="date" asp-for="ActionOneTargtDate" />
+                                        </td>
+                                        <td>
+                                            <input class="form-control" type="date" asp-for="ActionOneCompletionDate" />
+                                        </td>
+                                    </tr>
+                                    <!--action 2-->
+                                    <tr>
+                                        <td class="">
+                                            <textarea class="col-12" type="text" rows="1" asp-for="RecomdActionTwo"></textarea>
+                                        </td>
+                                        <td>
+                                            <input type="text" asp-for="ActionTwoResponsibility" />
+                                        </td>
+                                        <td>
+                                            <input class="form-control" type="date" asp-for="ActionTwoTargtDate" />
+                                        </td>
+                                        <td>
+                                            <input class="form-control" type="date" asp-for="ActionTwoCompletionDate" />
+                                        </td>
+                                    </tr>
+                                    <!--action 3-->
+                                    <tr>
+                                        <td class="">
+                                            <textarea class="col-12" type="text" rows="1" asp-for="RecomdActionThree"></textarea>
+                                        </td>
+                                        <td>
+                                            <input type="text" asp-for="ActionThreeResponsibility" />
+                                        </td>
+                                        <td>
+                                            <input class="form-control" type="date" asp-for="ActionThreeTargtDate" />
+                                        </td>
+                                        <td>
+                                            <input class="form-control" type="date" asp-for="ActionThreeCompletionDate" />
+                                        </td>
+                                    </tr>
+                                    <!--action 4-->
+                                    <tr>
+                                        <td class="">
+                                            <textarea class="col-12" type="text" rows="1" asp-for="RecomdActionFour"></textarea>
+                                        </td>
+                                        <td>
+                                            <input type="text" asp-for="ActionFourResponsibility" />
+                                        </td>
+                                        <td>
+                                            <input class="form-control" type="date" asp-for="ActionFourTargtDate" />
+                                        </td>
+                                        <td>
+                                            <input class="form-control" type="date" asp-for="ActionFourCompletionDate" />
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SECTION 8 END-->
+            <!-- SECTION 9 START-->
+
+            <div class="card">
+
+                <div class="card-header" id="headingSeven">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button"
+                                data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine ">
+                            SECTION 9 – Signatures
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#sectionsAccordion">
+                    <div class="card-body">
+                        <label class="font-weight-bolder">Investigated by:</label>
+                        <table class="table table-bordered ">
+                            <tr>
+                                <td style=" width: 25% " class="font-weight-bolder ">Supervisor</td>
+                                <td style=" width: 25% " class="">"Name to be populated" <br />Signed  </td>
+                                <td style=" width: 20% ">
+                                    <input class="custom-checkbox custom-control-input" type="checkbox" asp-for="CBxSupervisorSign" />
+                                    <label class="custom-checkbox custom-control-label" for="cBxSupervisorSign">Check to Sign</label>
+                                </td>
+                                <td style=" width: 20% ">
+                                    <label class="">Date</label>
+                                    <input type="date" class="form-control" asp-for="SupervisorSignDate" />
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        <br />
+                        <label>
+                            FORWARD TO THE DIRECTOR OF HR WITHIN 24 AFTER INTERVIEWING THE WORKER
+                        </label>
+                        <br /><br />
+                        <label>
+                            FORWARD TO JHSC WITHIN 2 CALENDAR DAYS OF INCIDENT
+                        </label>
+
+                        <hr />
+                        <label class="font-weight-bolder">Reviewed by:</label>
+                        <br />
+                        <table class="table table-bordered ">
+                            <tr>
+                                <td class="font-weight-bolder ">Human Resources Manager</td>
+                                <td class="">"Name to be populated" <br />Signed  </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-checkbox custom-control-input" type="checkbox" asp-for="CBxHrmsign" />
+                                        <label class="custom-control-label" asp-for="CBxHrmsign">Check to Sign</label>
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <label class="">Date</label>
+                                    <input type="date" class="form-control" asp-for="HrmsignDate" />
+                                </td>
+                            </tr>
+                            <!-- Production Manager--->
+                            <tr>
+                                <td class="font-weight-bolder ">Production Manager</td>
+                                <td class="">"Name to be populated" <br />Signed  </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" asp-for="CBxProdctMngSignd">
+                                        <label class="custom-control-label" asp-for="CBxProdctMngSignd">Check to Sign</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="">Date</label>
+                                    <input type="date" asp-for="PrdcMngrSignDate" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="font-weight-bolder ">Health & Safety  Coordinator</td>
+                                <td class="">"Name to be populated" <br />Signed  </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" asp-for="CBxHandScoordntrSgnd">
+                                        <label class="custom-control-label" asp-for="CBxHandScoordntrSgnd">Check to Sign</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="">Date</label>
+                                    <input type="date" class="form-control" asp-for="HandScoordntrSgndSignDate" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-weight-bolder ">Department Manager</td>
+                                <td class="">"Name to be populated" <br />Signed  </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" asp-for="DptMngrSgnd">
+                                        <label class="custom-control-label" asp-for="DptMngrSgnd">Check to Sign</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="">Date</label>
+                                    <input type="date" class="form-control" asp-for="DptMngrSignDate" />
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SECTION 9 END-->
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<hr />
+
+
+<div>
+    `
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

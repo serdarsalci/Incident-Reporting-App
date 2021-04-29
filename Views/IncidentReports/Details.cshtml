@@ -1,0 +1,55 @@
+﻿@model report1.IncidentReport
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>IncidentReport</h4>
+    <hr />
+    <dl class="row">
+        @*@Html.DisplayFor(model=>model.IrformId)*@
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsComplete)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsComplete)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IrrelatedDept)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IrrelatedDept)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IrstartDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IrstartDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IrcompleteDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IrcompleteDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ircreater)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ircreater.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Irform)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Irform.IrformId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Irid">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

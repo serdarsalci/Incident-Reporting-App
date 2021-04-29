@@ -1,0 +1,60 @@
+﻿@model report1.IncidentReport
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+
+<h4>IncidentReport</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Irid" />
+            <div class="form-group">
+                <label asp-for="IrcreaterId" class="control-label"></label>
+                <select asp-for="IrcreaterId" class="form-control" asp-items="ViewBag.IrcreaterId"></select>
+                <span asp-validation-for="IrcreaterId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsComplete" /> @Html.DisplayNameFor(model => model.IsComplete)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="IrrelatedDept" class="control-label"></label>
+                <input asp-for="IrrelatedDept" class="form-control" />
+                <span asp-validation-for="IrrelatedDept" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IrstartDate" class="control-label"></label>
+                <input asp-for="IrstartDate" class="form-control" />
+                <span asp-validation-for="IrstartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IrcompleteDate" class="control-label"></label>
+                <input asp-for="IrcompleteDate" class="form-control" />
+                <span asp-validation-for="IrcompleteDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IrformId" class="control-label"></label>
+                <select asp-for="IrformId" class="form-control" asp-items="ViewBag.IrformId"></select>
+                <span asp-validation-for="IrformId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

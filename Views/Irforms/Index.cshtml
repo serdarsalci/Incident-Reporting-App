@@ -1,0 +1,95 @@
+﻿@model IEnumerable<report1.Irform>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Incident Reports</h3>
+
+
+<p>
+
+
+    <a asp-action="Create">Create New Report</a>
+</p>
+
+
+
+
+@foreach (var item in Model)
+{
+    <br />
+    <div class="card">
+
+
+        <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+                <a asp-action="Details" asp-route-id="@item.IrformId">
+
+                    <div class="btn" type="" data-toggle="#@Html.DisplayFor(modelitem => item.IrformId)" data-target="#collapse" aria-expanded="true" aria-controls="collapseOne">
+                        Incident Report Id: @Html.DisplayFor(modelitem => item.IrformId)
+                    </div>
+
+                </a>
+
+                <div class="form-inline float-right btn ">
+
+                    <a asp-action="Edit" asp-route-id="@item.IrformId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.IrformId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IrformId">Delete</a>
+                </div>
+            </h2>
+        </div>
+
+
+
+        <div id="#@Html.DisplayFor(modelitem => item.IrformId)" class="collapse show mb-2 ml-2 col-md-12" aria-labelledby="headingOne" data-parent="#sectionsAccordion">
+            <br />
+            <div class="col-md-12 row">
+
+
+
+                <div class="form-group col-md-4 row">
+                    <div class="font-weight-bolder">  @Html.DisplayNameFor(modelitem => item.FirstName)</div>
+                    <div class="ml-2">   @Html.DisplayFor(modelitem => item.FirstName)</div>
+
+                </div>
+
+                <div class="form-group col-md-4 row">
+                    <div class="font-weight-bolder">  @Html.DisplayNameFor(modelitem => item.LastName)</div>
+                    <div class="ml-2"> @Html.DisplayFor(modelitem => item.LastName)</div>
+
+                </div>
+
+                <div class="form-group col-md-4 row">
+                    <div class="font-weight-bolder">  @Html.DisplayNameFor(modelitem => item.Position)</div>
+                    <div class="ml-2">  @Html.DisplayFor(modelitem => item.Position)</div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-12 row">
+
+                <div class="form-group col-md-4 row">
+                    <div class="font-weight-bolder">  @Html.DisplayNameFor(modelitem => item.Department)</div>
+                    <div class="ml-2">  @Html.DisplayFor(modelitem => item.Department)</div>
+
+                </div>
+
+
+                <div class="form-group col-md-4 row">
+                    <div class="font-weight-bolder"> @Html.DisplayNameFor(modelitem => item.DatOfIncident)</div>
+                    <div class="ml-2">  @Html.DisplayFor(modelitem => item.DatOfIncident)</div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+}
+
+
+

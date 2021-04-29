@@ -1,0 +1,1406 @@
+﻿@model report1.Irform
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Irform</h4>
+    <hr />
+
+
+    <div class="custom-control custom-checkbox float-right">
+        <div class="font-weight-bolder">
+
+            @Html.DisplayFor(model => model.CBxNearMiss)
+            @Html.DisplayNameFor(model => model.CBxNearMiss)
+            <!--     @*@*<label class="custom-control-label" asp-for="CBxNearMiss">Near-Miss</label>*@*   -->
+        </div>
+        <div class="font-weight-bolder">
+            @Html.DisplayFor(model => model.CBxInjuryReported)
+            <label>Injury Reported</label>
+        </div>
+        <div class="font-weight-bolder">
+            @Html.DisplayFor(model => model.CBxPropertyDamage)
+            <label>Property Damage Only</label>
+        </div>
+
+    </div>
+
+    <div class="clearfix"></div>
+
+
+    <div class="accordion" id="sectionsAccordion">
+
+        <div class="card">
+
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        SECTION 1 - Reporting Details
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show mb-2 ml-2 col-md-12" aria-labelledby="headingOne" data-parent="#sectionsAccordion">
+                <br />
+                <div class="col-md-12 row">
+                    <div class="col-md-3 ml-2 ">
+                        <div class="form-group row">
+                            <label class="control-label font-weight-bolder">Last Name</label>
+                            <div class="form-control ">  @Html.DisplayFor(model => model.LastName)</div>
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="control-label  font-weight-bolder">Date of incident</label>
+                            <div class="form-control"> @Html.DisplayFor(model => model.DatOfIncident)</div>
+                            <span asp-validation-for="DatOfIncident" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group  row">
+                            <label class="control-label font-weight-bolder">Exact Location:</label>
+                            <div class="form-control"> @Html.DisplayFor(model => model.ExactLocation)</div>
+                            <span asp-validation-for="ExactLocation" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3 ml-4">
+                        <div class="form-group row">
+                            <label class="control-label font-weight-bolder">First Name:</label>
+                            <div class="form-control">  @Html.DisplayFor(model => model.FirstName)</div>
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+
+                        @*<div class="form-group row">
+                            <label class="control-label font-weight-bolder">Time of Incident</label>
+                            <div class="form-control">  @Html.DisplayFor(model => model.TimeOfIncident)</div>
+                            <span asp-validation-for="TimeOfIncident" class="text-danger"></span>
+                        </div>*@
+                        <div class="form-group row">
+                            <label class="control-label font-weight-bolder">Last hour worked:</label>
+                            <div class="form-control">  @Html.DisplayFor(model => model.LastHourWorked)</div>
+                            <span asp-validation-for="LastHourWorked" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3 ml-4">
+                        <div class="form-group row">
+                            <label class="control-label font-weight-bolder">Position</label>
+                            <div class="form-control">  @Html.DisplayFor(model => model.Position)</div>
+                            <span asp-validation-for="Position" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="control-label font-weight-bolder">Department:</label>
+                            <div class="form-control"> @Html.DisplayFor(model => model.Department)</div>
+                            <span asp-validation-for="Department" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 form-group">
+
+                    <div>
+                        <label class="control-label font-weight-bolder">List of Potential witnesses in the area at the time of incident</label>
+                        <span asp-validation-for="PotentialWitnesses" class="text-danger"></span>
+                    </div>
+                    <div class="form-control">
+                        @Html.DisplayFor(model => model.PotentialWitnesses)
+                    </div>
+
+                </div>
+
+
+                <div class="row col-md-12">
+                    <div class=" form-group col-md-6">
+
+                        <label class="control-label font-weight-bolder">Incident Reported to</label>
+                        <div class="form-control">  @Html.DisplayFor(model => model.IncidentReportedTo)</div>
+                        <span asp-validation-for="IncidentReportedTo" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group col-md-6">
+
+                        <label class="control-label font-weight-bolder">Date Reported</label>
+                        <div class="form-control">  @Html.DisplayFor(model => model.DateReported)</div>
+                        <span asp-validation-for="DateReported" class="text-danger"></span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sec 1 end -->
+
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        SECTON 2 - Injury Details
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#sectionsAccordion">
+                <br />
+
+                <div class="row mb-2 col-md-12 ml-2">
+
+                    @* Col 1  *@
+                    <div class="col-md-5 mt-2 ">
+
+                        <div class="form-group">
+                            <label class="font-weight-bolder">Length of time in position:</label>
+                            <div class="col-md-4">@Html.DisplayFor(model => model.LengthOfTimeInPosition)</div>
+                        </div>
+
+
+                        @* Sec 2 Was the Incident:  *@
+                        <div class="custom-control custom-checkbox">
+                            <label class="font-weight-bold">Was the incident:</label>
+
+                            <div class="form-inline form-group">
+                                <div class="">@Html.DisplayFor(model => model.RBtnSuddenSpecific)</div>
+                                <label>Sudden Specific Event/Occurance</label>
+                            </div>
+
+                            <div class="form-inline form-group">
+                                <div class="">@Html.DisplayFor(model => model.RBtnGradually)</div>
+                                <label>Gradually Occuring Over Time</label>
+                            </div>
+
+                            <div class="form-inline form-group">
+                                <div class="">@Html.DisplayFor(model => model.RBtnOccupational)</div>
+                                <label> @Html.DisplayNameFor(model => model.RBtnOccupational)</label>
+                            </div>
+                            <div class="form-inline form-group">
+                                <div class="">@Html.DisplayFor(model => model.RBtnFatality)</div>
+                                <label> @Html.DisplayNameFor(model => model.RBtnFatality)</label>
+                            </div>
+
+                            <label class="font-weight-bold">Dominant hand? </label>
+
+                            <div class="form-inline">
+                                <div class="">@Html.DisplayFor(model => model.LeftHand)</div>
+                                <label> @Html.DisplayNameFor(model => model.LeftHand)</label>
+                            </div>
+                            <div class="form-inline">
+                                <div class="">@Html.DisplayFor(model => model.RightHand)</div>
+                                <label> @Html.DisplayNameFor(model => model.RightHand)</label>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    @* Col 2 *@
+                    <div class="col-md-6 mt-2 ">
+
+                        <div class="row col-md-12 ">
+                            <label class="font-weight-bolder col-md-7">Fully trained in this position?</label>
+
+                            <div class="form-row col-md-5">
+                                <div class="form-row">
+                                    <div class="">@Html.DisplayFor(model => model.FullyTrainedYes)</div>
+                                    <label>Yes</label>
+                                </div>
+                                <div class="form-row ml-2">
+                                    <div class="">@Html.DisplayFor(model => model.FullyTrainedNo)</div>
+                                    <label>No</label>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row col-md-12 ">
+                            <label class="font-weight-bolder col-md-7">Wearing PPE?</label>
+
+                            <div class="form-row col-md-5">
+                                <div class="form-row ">
+                                    <div class="">@Html.DisplayFor(model => model.WearingPpeyes)</div>
+                                    <label>Yes</label>
+                                </div>
+                                <div class="form-row ml-2">
+                                    <div class="">@Html.DisplayFor(model => model.WearingPpeno)</div>
+                                    <label>No</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row col-md-12 ">
+                            <label class="font-weight-bolder col-md-7">Specify PPE?</label>
+
+                            <div class="col-md-5">
+
+                                @Html.DisplayFor(model => model.SpecifyPpe)
+
+                            </div>
+                        </div>
+
+                        <br />
+                        <hr />
+
+                        @* Type Of Incident *@
+                        <label class="font-weight-bold col-md-12">Type of Incident/Illness:</label>
+
+                        <div class="custom-control custom-checkbox">
+
+                            <div class="row">
+                                <div class="col-md-6">
+
+
+                                    <div class="form-inline">
+                                        <div class="">@Html.DisplayFor(model => model.CBxCut)</div>
+                                        <label>Cut </label>
+                                    </div>
+                                    <div class="form-inline">
+                                        <div class="">@Html.DisplayFor(model => model.CBxBurn)</div>
+                                        <label>Burn </label>
+                                    </div>
+                                    <div class="form-inline">
+                                        <div class="">@Html.DisplayFor(model => model.CBxBumpBruise)</div>
+                                        <label>Bump/Bruise </label>
+                                    </div> <div class="form-inline">
+                                        <div class="">@Html.DisplayFor(model => model.CBxSlipFall)</div>
+                                        <label>Slip / Fall</label>
+                                    </div> <div class="form-inline">
+                                        <div class="">@Html.DisplayFor(model => model.CBxRepettitiveStrain)</div>
+                                        <label>Repetitive Strain</label>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-inline">
+                                        <div class="">@Html.DisplayFor(model => model.CBxBackInjury)</div>
+                                        <label> @Html.DisplayNameFor(model => model.CBxBackInjury)</label>
+                                    </div>
+
+                                    <div class="form-inline">
+                                        <div class="">@Html.DisplayFor(model => model.CBxOverexertion)</div>
+                                        <label> @Html.DisplayNameFor(model => model.CBxOverexertion)</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-inline">
+                                            <div class="">@Html.DisplayFor(model => model.CBxOther)</div>
+                                            <label class="">Other:</label>
+                                            <div class="form-text"> @Html.DisplayFor(model => model.TypeOfAccidentOther)</div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <br />
+
+                @* Area of Injury *@
+
+                <label class=" col-md-12 text-center font-weight-bolder">Area of Injury (Body Part-Please check all that apply)</label>
+
+                <div class="form-group row ml-2">
+
+                    <div class="col-md-4 mt-2 row">
+                        <br />
+
+                        <div class="col-6">
+                            <div class="custom-control custom-checkbox">
+                                <br />
+
+                                <div class="form-inline">
+                                    <div class="">@Html.DisplayFor(model => model.CBxHead)</div>
+                                    <label> @Html.DisplayNameFor(model => model.CBxHead)</label>
+                                </div>
+                                <div class="form-inline">
+                                    <div class="">@Html.DisplayFor(model => model.CBxFace)</div>
+                                    <label> @Html.DisplayNameFor(model => model.CBxFace)</label>
+                                </div>
+                                <div class="form-inline">
+                                    <div class="">@Html.DisplayFor(model => model.CBxEye)</div>
+                                    <label> @Html.DisplayNameFor(model => model.CBxEye)</label>
+                                </div>
+                                <div class="form-inline">
+                                    <div class="">@Html.DisplayFor(model => model.CBxTheeth)</div>
+                                    <label> @Html.DisplayNameFor(model => model.CBxTheeth)</label>
+                                </div>
+                                <div class="form-inline">
+                                    <div class="">@Html.DisplayFor(model => model.CBxNeck)</div>
+                                    <label> @Html.DisplayNameFor(model => model.CBxNeck)</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="custom-control custom-checkbox">
+                                <br />
+
+                                <div class="form-inline">
+                                    <div class="">@Html.DisplayFor(model => model.CBxUpperBack)</div>
+                                    <label> @Html.DisplayNameFor(model => model.CBxUpperBack)</label>
+                                </div>
+                                <div class="form-inline">
+                                    <div class="">@Html.DisplayFor(model => model.CBxLowerBack)</div>
+                                    <label> @Html.DisplayNameFor(model => model.CBxLowerBack)</label>
+                                </div>
+                                <div class="form-inline">
+                                    <div class="">@Html.DisplayFor(model => model.CBxChest)</div>
+                                    <label> @Html.DisplayNameFor(model => model.CBxChest)</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 ">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="custom-checkbox">
+
+                                            <div class="ml-4">
+                                                <label class="font-weight-bolder">Left</label>
+                                                <div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxLeftShoulder)</div>
+                                                        <label>Shoulder</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxLeftElbow)</div>
+                                                        <label>Elbow</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxLeftUpperArm)</div>
+                                                        <label>Upper Arm</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxLeftForeArm)</div>
+                                                        <label>Forearm</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxLeftHand)</div>
+                                                        <label>Hand</label>
+                                                    </div>
+
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxLeftWrist)</div>
+                                                        <label>Wrist</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxLeftFinder)</div>
+                                                        <label>Finger</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxLeftHip)</div>
+                                                        <label>Hip</label>
+                                                    </div>
+
+
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="custom-checkbox">
+
+                                            <div class="ml-4">
+                                                <label class="font-weight-bolder">Right</label>
+                                                <div class="form-inline">
+                                                    <div class="">@Html.DisplayFor(model => model.CBxRightShoulder)</div>
+                                                    <label>Shoulder</label>
+                                                </div> <div class="form-inline">
+                                                    <div class="">@Html.DisplayFor(model => model.CBxRightElbow)</div>
+                                                    <label>Elbow</label>
+                                                </div>
+                                                <div class="form-inline">
+                                                    <div class="">@Html.DisplayFor(model => model.CBxRightUpperArm)</div>
+                                                    <label>Upper Arm</label>
+                                                </div>
+                                                <div class="form-inline">
+                                                    <div class="">@Html.DisplayFor(model => model.CBxRightForeArm)</div>
+                                                    <label>Forearm</label>
+                                                </div>
+                                                <div class="form-inline">
+                                                    <div class="">@Html.DisplayFor(model => model.CBxRightHand)</div>
+                                                    <label>Hand</label>
+                                                </div>
+                                                <div class="form-inline">
+                                                    <div class="">@Html.DisplayFor(model => model.CBxRightWrist)</div>
+                                                    <label>Wrist</label>
+                                                </div>
+                                                <div class="form-inline">
+                                                    <div class="">@Html.DisplayFor(model => model.CBxRightFinder)</div>
+                                                    <label>Finger</label>
+                                                </div>
+                                                <div class="form-inline">
+                                                    <div class="">@Html.DisplayFor(model => model.CBxRightHip)</div>
+                                                    <label>Hip</label>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="ml-3 custom-checkbox">
+
+                                            <div class="ml-4">
+                                                <label class="font-weight-bolder">Left</label>
+
+                                                <div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxLeftButtocks)</div>
+                                                        <label>Buttocks</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxLeftGroin)</div>
+                                                        <label>Groin</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxLeftThigh)</div>
+                                                        <label>Thigh</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxLeftKnee)</div>
+                                                        <label>Knee</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxLeftLowerLeg)</div>
+                                                        <label>Lower Leg</label>
+                                                    </div>
+
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxLeftAnkle)</div>
+                                                        <label>Ankle</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxLeftFoot)</div>
+                                                        <label>Foot</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxLeftToes)</div>
+                                                        <label>Toe(s)</label>
+                                                    </div>
+
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="row">
+
+                                            <div class="ml-3 custom-checkbox">
+
+                                                <div class="ml-4">
+                                                    <label class="font-weight-bolder">Right</label>
+
+
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxRightButtock)</div>
+                                                        <label>Buttocks</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxRightGroin)</div>
+                                                        <label>Groin</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxRightThigh)</div>
+                                                        <label>Thigh</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxRightKnee)</div>
+                                                        <label>Knee</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxRightLowerLeg)</div>
+                                                        <label>Lower Leg</label>
+                                                    </div>
+
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxRightAnkle)</div>
+                                                        <label>Ankle</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxRightFoot)</div>
+                                                        <label>Foot</label>
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <div class="">@Html.DisplayFor(model => model.CBxRightToes)</div>
+                                                        <label>Toe(s)</label>
+                                                    </div>
+
+
+
+
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <br />
+
+                    </div>
+                    <hr />
+
+                    <div class="row col-md-12 ml-2">
+
+                        <div class="col-md-4">
+                            <div class="form-inline">
+                                <div class="">@Html.DisplayFor(model => model.NoMedAttentionRequired)</div>
+
+                                <label class="form-check-inline font-weight-bolder ml-2">No medical attention required</label>
+                            </div>
+
+                        </div>
+                        <div class="col-3">
+                            <div class="form-inline">
+                                <div class="">@Html.DisplayFor(model => model.FirstAidOnsite)</div>
+
+                                <label class="form-check-inline font-weight-bolder ml-2">First aid given onsite</label>
+                            </div>
+
+                        </div>
+                        <div class="col-4">
+                            <div class="form-inline">
+                                <div class="">@Html.DisplayFor(model => model.OutsideMedAttention)</div>
+                                <label class="form-check-inline font-weight-bolder ml-2">Outside medical attention sought</label>
+                            </div>
+
+                            <div class="form-row form-group form-inline ml-4">
+                                <label class="font-weight-bolder">When:</label>
+
+                                <div class=" ml-2">@Html.DisplayFor(model => model.DateOfmedAttention)</div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="ml-2 col-md-12">
+                        <hr />
+                        <div class="form-inline ml-2">
+                            <label class="font-weight-bolder">Was worker sent out for medical attention(i.e. Urgent care)?</label>
+
+                            <div class="form-inline ml-2">
+                                @Html.DisplayFor(model => model.SentOutforMedicalAttn)
+
+                                <label class="ml-2">Yes</label>
+                            </div>
+
+                            <div class="form-inline ml-3">
+                                @Html.DisplayFor(model => model.NotSentOutforMedicalAttn)
+
+                                <label class="ml-2">No</label>
+                            </div>
+
+                        </div>
+                        <br />
+
+                        <div class="form-row form-group form-inline ml-2">
+                            <label class="font-weight-bolder" "DateLearnedOutsideHc">When did you learn that the worker recieved outside Health Care?</label>
+                            <div class=""> @Html.DisplayFor(model => model.DateLearnedOutsideHc)</div>
+                        </div>
+
+                        <div class="form-row form-group form-inline ml-2">
+                            <label class="font-weight-bolder">Name of Health Care Provider(If known) :</label>
+                            <div class="ml-3"> @Html.DisplayFor(model => model.HealthCareProvider)</div>
+
+                        </div>
+                        <div class="form-inline ml-2 form-group mb-0 pb-0">
+                            <label class="font-weight-bolder">Did worker have any lost time(not paid) after the day of injury?</label>
+
+                            <div class="form-inline">
+                                @Html.DisplayFor(model => model.HaveLostTime)
+
+                                <label class="ml-2">Yes</label>
+                            </div>
+                            <div class="form-inline">
+                                @Html.DisplayFor(model => model.NotHaveLostTime)
+
+                                <label class="ml-2">No</label>
+                            </div>
+
+
+                        </div>
+                        <div class="form-inline mt-0 ml-2 mb-2">
+                            <label>If yes, When?</label>
+
+                            @Html.DisplayFor(model => model.DateLostTime)
+
+                        </div>
+                        <div class="">
+                            <label class="font-weight-bolder ml-2">Worker provided with FAF?</label>
+                            @Html.DisplayFor(model => model.ProvidedFaf)
+
+                            <label>Yes</label>
+                            @Html.DisplayFor(model => model.NotProvidedFaf)
+
+                            <label>No</label>
+                            <label class="font-weight-bolder ml-4">Completed FAF returned?</label>
+                            @Html.DisplayFor(model => model.FafReturned)
+
+                            <label>Yes</label>
+                            @Html.DisplayFor(model => model.NotfafReturned)
+
+                            <label>No</label>
+                        </div>
+                        <div class="ml-2">
+
+                            <label class="font-weight-bolder">Modified Duties:</label>
+                            @Html.DisplayFor(model => model.ModDutyNoRestriction)
+
+                            <label>No Restrictions</label>
+
+                            @Html.DisplayFor(model => model.ModDutyAccepted)
+
+                            <label>Accepted</label>
+
+                            @Html.DisplayFor(model => model.ModDutyDeclined)
+
+                            <label>Declined</label>
+                            <label>Why?</label>
+                            <p>  @Html.DisplayFor(model => model.WhyModiedDutyDeclined)</p>
+
+
+                        </div>
+                        <div class="form-row form-group form-inline ml-2">
+                            <label class="font-weight-bolder" asp-for="DateModDutyOffered">Date modified duties offered</label>
+                            <div> @Html.DisplayFor(model => model.DateModDutyOffered)</div>
+
+                        </div>
+
+                        <div class="ml-2">
+                            <label class="font-weight-bolder"> What duties were offered?</label>
+                            <p> @Html.DisplayFor(model => model.ModiedDutiesOffered)</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            SECTION 3 – Incident Details/JHSC Recommendation
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#sectionsAccordion">
+                    <div class="card-body col-md-12 ml-3">
+                        <p class="font-weight-bolder">
+                            Describe the incident that occurred and include any details of equipment,
+                            materials or environmental conditions that may have contributed. Include what the injury is and describe
+                            what the worker was doing at the time (ex. Trimming part A2232, slipped on wet floor at D5, etc.)
+                            Be specific.
+                        </p>
+
+
+                        <div class="form-group">
+
+                            @Html.DisplayFor(model => model.TxAdescribeIncident)
+
+                        </div>
+
+
+
+                        <p class="font-weight-bolder">How can the incident be prevented from happening again? List suggestions from employee involved.</p>
+
+                        <div class="form-group">
+
+                            @Html.DisplayFor(model => model.TxAhowToPrevent)
+
+                        </div>
+
+                        @* MANAGER access only *@
+                        <p class="font-weight-bolder">Any recommendations from JHSC worker member?</p>
+                        <div class="form-group">
+
+                            @Html.DisplayFor(model => model.TxJhscrecomend)
+
+                        </div>
+
+
+
+                        <div class="form-inline mt-2">
+                            <label class="font-weight-bolder">JHSC(Worker Rep) Name:</label>
+                            @Html.DisplayFor(model => model.JhscrepName)
+
+
+                            <label class="ml-2">Signature</label>
+                            @Html.DisplayFor(model => model.Jhscsignature)
+
+                            <label class="ml-2">Date</label>
+                            @Html.DisplayFor(model => model.JhscsignDate)
+
+                        </div>
+                        <hr />
+                        <div class="text-center font-weight-bolder form-group">
+                            COMPLETE ALL REMAINING SECTIONS FOR ANY OUTSIDE MEDICAL AID AND PROPERTY DAMAGE
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- SECTION 3 END-->
+            <!-- SECTION 4 start-->
+
+            <div class="card">
+
+                <div class="card-header" id="headingFour">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            SECTION 4 – Witnesses
+                        </button>
+                    </h2>
+                </div>
+
+
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#sectionsAccordion">
+                    <div class="card-body">
+
+                        Individuals who were in the area or have knowledge of the incident should be interviewed. All witness statements should be taken.
+                        Write in below or add extra pages as required. Attach all witness forms to this report.
+                        More witnesses may be identified during the investigation than what is first reported in Section 1.
+
+
+                        <div class="row ml-2 form-inline">
+
+                            <div class="col-3">
+                                <div class="form-inline">
+                                    @Html.DisplayFor(model => model.NoWitnesses)
+
+                                    <label class="form-check-inline ml-2">No Witnesses</label>
+                                </div>
+
+                            </div>
+                            <div class="col-4">
+                                <div class="form-inline">
+                                    @Html.DisplayFor(model => model.AllWitnsSttmntsAttched)
+
+                                    <label class="form-check-inline ml-2">All Witness Statement Forms attached</label>
+                                </div>
+
+                            </div>
+                            <div class="col-4">
+                                <div class="form-inline">
+                                    @Html.DisplayFor(model => model.WitnsSttmntsToFllw)
+
+                                    <label class="form-check-inline  ml-2">Witness Statement Form(s) to follow</label>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="p-2 m-2">@Html.DisplayFor(model => model.WitnessSatetements)</div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card">
+
+                <div class="card-header" id="headingFive">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            SECTION 5 – Underlying Causes
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#sectionsAccordion">
+                    <div class="card-body">
+                        <div class="font-weight-bolder">
+                            Check (X) all that are applicable
+                        </div>
+
+                        <br />
+                        <div class="col-md-12 row">
+
+                            <!--Conditions-->
+                            <div class="col-md-6 custom-control">
+                                <div class="text-left font-weight-bolder">Conditions</div>
+
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxCongestion)
+                                    <label>Congestion</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxDefEquipmnt)
+                                    <label>Defective Equipment, tools or materials</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxPoorHsKeeping)
+
+                                    <label>Poor housekeeping</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxSlpTripHzrd)
+
+                                    <label for="CBxSlpTripHzrd">Slip/trip hazards</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxInadqtSftySys)
+
+                                    <label for="cBxInadqtSftySys">Inadequate safety systems</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxDsgEqpWrksttn)
+
+                                    <label>Design of equipment/workstation</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxInEdqtPrtEqui)
+
+                                    <label>Inadequate protective equipment</label>
+                                </div>
+
+
+                            </div>
+
+                            <!-- Practices-->
+                            <div class="col-md-6 custom-checkbox ">
+                                <div class="text-left font-weight-bolder">Practices</div>
+
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxImpropPosLift)
+                                    <label>Improper body position/posture/lifting</label>
+                                </div>
+
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxRushing)
+
+                                    <label>Rushing</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxInappCndct)
+
+                                    <label>Inappropriate conduct</label>
+                                </div>
+                                <div class="ml-5">
+                                    @Html.DisplayFor(model => model.CBxNtFllwProcdr)
+
+                                    <label>Not following appropriate procedures</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxInprprUseOfEqui)
+
+                                    <label>Improper use of equipment</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxAltModEqui)
+
+                                    <label>Altering or modifying equipment</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxNtUsePpe)
+                                    <label>Not using personal protective equipment</label>
+                                </div>
+
+                                <div class="ml-5">
+                                    @Html.DisplayFor(model => model.CBxRmvlSaftyDev)
+
+                                    <label>Removal of safety device</label>
+                                </div>
+                                <div class="ml-5">
+                                    @Html.DisplayFor(model => model.CBxLacOfkAttn)
+                                    <label>Lack of attention</label>
+                                </div>
+                                <div class="ml-5">
+                                    @Html.DisplayFor(model => model.CBxPracticeOthrExp)
+
+                                    <label>Other(explain)</label>
+
+                                </div>
+                                <p>  @Html.DisplayFor(model => model.TxApracticeOthrExp)</p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- SECTION 5 END-->
+            <!-- SECTION 6 Prevention/Corrective Action-->
+            <div class="card">
+
+                <div class="card-header" id="headingFour">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            SECTION 6 – Prevention/Corrective Action
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseSix" class="collapse container" aria-labelledby="headingSix" data-parent="#sectionsAccordion">
+                    <div class="card-body">
+                        <div class="font-weight-bolder container-fluid">
+                            Mark with (X) those actions taken/decided upon or planned to prevent recurrence.
+                            More than one item may apply.
+                        </div>
+                        <br />
+                        <div class="col-md-12 row mt-1">
+
+                            <div class="col-md-6 custom-checkbox">
+
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxTrnInstInvolved)
+                                    <label class="col-form-label">Training/ instruction of person involved</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxTrnInstOther)
+                                    <label class="">Training/ instruction of other workers</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxImpWrkProcedure)
+                                    <label class="">Improve work procedures</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxPrcsChgImprv)
+                                    <label class="">Process change/improvement</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxImpEngDsgWsttn)
+                                    <label class="">Improve engineering/design of workstation</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxImprvPpe)
+                                    <label>Improve PPE</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxImplmntPrvMntnc)
+                                    <label class="">Implement preventative maintenance</label>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6 custom-checkbox ">
+
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxImpInspPrcdr)
+                                    <label>Improve inspection procedures</label>
+                                </div>
+
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxToolsEquiRprRplc)
+                                    <label>Tools, equipment repair or replacement</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxRqErgAssmnt)
+                                    <label>Request ergonomic assessment</label>
+                                </div>
+                                <div class="ml-5">
+                                    @Html.DisplayFor(model => model.CBxReAsgnPrsn)
+                                    <label>Reassignment of person</label>
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.CBxImpHsKeeping)
+                                    <label>Improve housekeeping</label>
+                                </div>
+                                <div class="ml-5">
+                                    @Html.DisplayFor(model => model.CBxInstSftyDev)
+                                    <label>Installation of safety devices</label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <br />
+                        <div class="container">
+                            <div class="font-weight-bolder mt-2">
+                                Please describe in detail what preventative/corrective steps have been taken and when.
+                                For items that have not been completed please specify time frames, work orders, etc.
+                            </div>
+                            <br />
+                            <div>
+                                @Html.DisplayFor(model => model.TxtAsec6Desc)
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- SECTION 6 END-->
+            <!-- SECTION 7-->
+            <div class="card">
+                <div class="card-header" id="headingSeven">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            SECTION 7 – Concerns with this claim
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseSeven" class="collapse container" aria-labelledby="headingSeven" data-parent="#sectionsAccordion">
+                    <div class="card-body">
+                        <div class="font-weight-bolder">
+                            If the investigation reveals events other than what was reported above, complete a narrative with your findings and attach it to this report.
+                            Any other evidence/information not otherwise reported should also be documented and attached.
+                        </div>
+                        <br />
+
+                        <div class="row custom-checkbox ml-2">
+                            <div class="form-inline col-3">
+                                @Html.DisplayFor(model => model.NoFurtherReport)
+
+                                <label ml-2">No Further Report</label>
+                            </div>
+                            <div class="form-inline col-3">
+                                @Html.DisplayFor(model => model.ReportAttached)
+
+                                <label ml-2">Report Attached</label>
+                            </div>
+                            <div class=" col-3">
+                                @Html.DisplayFor(model => model.ReportToFollow)
+
+                                <label ml-2">Report to follow</label>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="container col-md-12">
+                            @Html.DisplayFor(model => model.SecSevenReport)
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SECTION 7 END-->
+            <!-- SECTION 8 START-->
+
+            <div class="card">
+                <div class="card-header" id="headingSeven">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button"
+                                data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            SECTION 8 – Determinations of Root Causes
+                        </button>
+                    </h2>
+
+
+                </div>
+                <div id="collapseEight" class="collapse container" aria-labelledby="headingEight" data-parent="#sectionsAccordion">
+                    <div class="card-body container">
+                        <br />
+
+                        <div class="container">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td class="font-weight-bolder">State Injury</td>
+
+                                    <td><p class="col-12">@Html.DisplayFor(model => model.StateInjury)</p></td>
+                                    <td class="font-weight-bolder">3. WHY?</td>
+                                    <td>
+                                        <p class="col-12"> @Html.DisplayFor(model => model.ThirdWhy)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bolder">1. WHY?</td>
+                                    <td><p class="col-12"> @Html.DisplayFor(model => model.FirstWhy)</p></td>
+                                    <td class="font-weight-bolder">4. WHY?</td>
+                                    <td><p class="col-12">@Html.DisplayFor(model => model.FourthWhy)</p></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bolder">2. WHY?</td>
+                                    <td><p class="col-12">@Html.DisplayFor(model => model.SecondWhy)</p></td>
+
+                                    <td class="font-weight-bolder">5. WHY?</td>
+                                    <td><p class="col-12">@Html.DisplayFor(model => model.FifthWhy)</p></td>
+
+                                </tr>
+                            </table>
+                        </div>
+                        <br />
+
+                        <div class=" container">
+                            <table class="table table-bordered">
+
+                                <thead class="">
+                                    <tr class="">
+                                        <th class=" font-weight-bolder w-auto">
+                                            Recomended Action
+                                        </th>
+                                        <th class="font-weight-bolder w-auto">
+                                            Responsibility
+                                        </th>
+                                        <th class="font-weight-bolder w-auto">
+                                            Target Date
+                                        </th>
+                                        <th class="font-weight-bolder w-auto">
+                                            Completetion Date
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td class="">
+                                            <p class=""> @Html.DisplayFor(model => model.RecomdActionOne)</p>
+
+                                        </td>
+                                        <td>
+                                            <p class=""> @Html.DisplayFor(model => model.ActionOneResponsibility)</p>
+
+                                        </td>
+                                        <td>
+                                            <p class=""> @Html.DisplayFor(model => model.ActionOneTargtDate)</p>
+
+                                        </td>
+                                        <td>
+                                            <p class=""> @Html.DisplayFor(model => model.ActionOneCompletionDate)</p>
+
+                                        </td>
+                                    </tr>
+                                    <!--action 2-->
+                                    <tr>
+                                        <td class="">
+                                            <p class=""> @Html.DisplayFor(model => model.RecomdActionTwo)</p>
+
+                                        </td>
+                                        <td>
+                                            <p class=""> @Html.DisplayFor(model => model.ActionTwoResponsibility)</p>
+
+                                        </td>
+                                        <td>
+                                            <p class=""> @Html.DisplayFor(model => model.ActionTwoTargtDate)</p>
+
+                                        </td>
+                                        <td>
+                                            <p class=""> @Html.DisplayFor(model => model.ActionTwoCompletionDate)</p>
+
+                                        </td>
+                                    </tr>
+                                    <!--action 3-->
+                                    <tr>
+                                        <td class="">
+                                            <p class=""> @Html.DisplayFor(model => model.RecomdActionThree)</p>
+
+                                        </td>
+                                        <td>
+                                            <p class=""> @Html.DisplayFor(model => model.ActionThreeResponsibility)</p>
+
+                                        </td>
+                                        <td>
+                                            <p class=""> @Html.DisplayFor(model => model.ActionThreeTargtDate)</p>
+
+                                        </td>
+                                        <td>
+                                            <p class=""> @Html.DisplayFor(model => model.ActionThreeCompletionDate)</p>
+
+                                        </td>
+                                    </tr>
+                                    <!--action 4-->
+                                    <tr>
+                                        <td class="">
+                                            <p class=""> @Html.DisplayFor(model => model.RecomdActionFour)</p>
+
+                                        </td>
+                                        <td>
+                                            <p class=""> @Html.DisplayFor(model => model.ActionFourResponsibility)</p>
+
+                                        </td>
+                                        <td>
+                                            <p class=""> @Html.DisplayFor(model => model.ActionFourTargtDate)</p>
+
+                                        </td>
+                                        <td>
+                                            <p class=""> @Html.DisplayFor(model => model.ActionFourCompletionDate)</p>
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SECTION 8 END-->
+            <!-- SECTION 9 START-->
+
+            <div class="card">
+
+                <div class="card-header" id="headingSeven">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button"
+                                data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine ">
+                            SECTION 9 – Signatures
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#sectionsAccordion">
+                    <div class="card-body">
+                        <label class="font-weight-bolder">Investigated by:</label>
+                        <table class="table table-bordered ">
+                            <tr>
+                                <td style=" width: 25% " class="font-weight-bolder ">Supervisor</td>
+                                <td style=" width: 25% " class="">"Name to be populated" <br />Signed  </td>
+                                <td style=" width: 20% ">
+
+                                    <p class=""> @Html.DisplayFor(model => model.CBxSupervisorSign)</p>
+                                 
+                                    <label class="custom-checkbox ">Check to Sign</label>
+                                </td>
+                                <td style=" width: 20% ">
+                                    <label class="">Date</label>
+                                    <p class=""> @Html.DisplayFor(model => model.SupervisorSignDate)</p>
+                                  
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        <br />
+                        <label>
+                            FORWARD TO THE DIRECTOR OF HR WITHIN 24 AFTER INTERVIEWING THE WORKER
+                        </label>
+                        <br /><br />
+                        <label>
+                            FORWARD TO JHSC WITHIN 2 CALENDAR DAYS OF INCIDENT
+                        </label>
+
+                        <hr />
+                        <label class="font-weight-bolder">Reviewed by:</label>
+                        <br />
+                        <table class="table table-bordered ">
+                            <tr>
+                                <td class="font-weight-bolder ">Human Resources Manager</td>
+                                <td class="">"Name to be populated" <br />Signed  </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox form-inline">
+                                        <p class=""> @Html.DisplayFor(model => model.CBxHrmsign)</p>
+                                       
+                                        <label class="" >Check to Sign</label>
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <label class="">Date</label>
+                                    <p class=""> @Html.DisplayFor(model => model.HrmsignDate)</p>
+                                   
+                                </td>
+                            </tr>
+                            <!-- Production Manager--->
+                            <tr>
+                                <td class="font-weight-bolder ">Production Manager</td>
+                                <td class="">"Name to be populated" <br />Signed  </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" asp-for="CBxProdctMngSignd">
+                                        <label class="custom-control-label" asp-for="CBxProdctMngSignd">Check to Sign</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="">Date</label>
+                                    <input type="date" asp-for="PrdcMngrSignDate" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="font-weight-bolder ">Health & Safety  Coordinator</td>
+                                <td class="">"Name to be populated" <br />Signed  </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" asp-for="CBxHandScoordntrSgnd">
+                                        <label class="custom-control-label" asp-for="CBxHandScoordntrSgnd">Check to Sign</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="">Date</label>
+                                    <input type="date" class="form-control" asp-for="HandScoordntrSgndSignDate" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-weight-bolder ">Department Manager</td>
+                                <td class="">"Name to be populated" <br />Signed  </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" asp-for="DptMngrSgnd">
+                                        <label class="custom-control-label" asp-for="DptMngrSgnd">Check to Sign</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label class="">Date</label>
+                                    <input type="date" class="form-control" asp-for="DptMngrSignDate" />
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SECTION 9 END-->
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.IrformId">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
